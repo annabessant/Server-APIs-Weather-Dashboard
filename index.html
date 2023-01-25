@@ -15,9 +15,9 @@
 
 <body>
   <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-    <h1>Weather Dashboard</h1>
+    <h1 style="background-color:rgb(17, 73, 119)">Weather Dashboard</h1>
   </header>
-
+  
   <!-- max-width for ultra wide resolutions -->
   <div class="container-fluid" style="max-width: 1400px">
     <div class="row">
@@ -47,6 +47,15 @@
         <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
       </div>
     </div>
+  </div>
+
+    <!-- Jumbotron to display the City name upon search -->
+  <div id="header" class="jumbotron jumbotron-fluid text-container">
+      <h5 id="header-text" class="display-5">Weather in:</h5>
+      <p class="temp">Temp:</p>
+      <p class="wind">Wind:</p>
+      <p class="humidity">Humidity: </p>
+      <div id="artist-credit"></div>
   </div>
 
   <!-- Moment.js -->
