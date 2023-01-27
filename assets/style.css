@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: blue;
+    height: 50px;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    border: 1px solid red;
+}
+
+main div {
+    border: 1px solid red;
+}
+
+#search-area {
+    width: 20%;
+}
+
+#weather-area {
+    width: 80%;
+}
