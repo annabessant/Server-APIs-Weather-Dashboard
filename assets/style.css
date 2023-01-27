@@ -30,3 +30,37 @@ main div {
 #weather-area {
     width: 80%;
 }
+
+#weather-area div {
+    border: 1px solid blue;
+}
+
+form {
+    margin-top: 30px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form button {
+    background-color: aqua;
+    border-radius: 3px;
+}
+
+#buttons-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#forecast-cards {
+display: flex;
+justify-content: space-between;
+}
+
+.card {
+    background-color: lightgreen;
+
+}

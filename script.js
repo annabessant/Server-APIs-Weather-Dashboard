@@ -1,25 +1,24 @@
-// Add your own API key & URL to api.openweather.map
-var APIKey = "k9kwhfWu.YHFZOslEQXaaUnDw0U3WLRkHs8RLPbWr"
-var queryURL = "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=" + APIKey;
+var buttonContainer = document.getElementById('buttons-container');
+var searchArea = document.getElementById('search-area');
+var buttonContainer = document.getElementById('card');
 
-// We then created an AJAX call
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    // Create CODE HERE to Log the queryURL
-    console.log(queryURL);
-    // Create CODE HERE to log the resulting object
-    console.log(response);
-    // Create CODE HERE to calculate the temperature (converted from Kelvin)
-      // Hint: To convert from Kelvin to Celsius: C = K - 273.15
-      let K = response.main.temp;
-      let C = K - 273.15;
-      console.log(C);
-    // Create CODE HERE to transfer content to HTML
-      document.querySelector('.city').innerText = `City: ${response.name}`;
-      document.querySelector('.wind').innerText = `Wind Speed: ${response.wind.speed}metre/sec`;
-      document.querySelector('.humidity').innerText = `Humidity: ${response.main.humidity}`;
-    // Create CODE HERE to dump the temperature content into HTML
-      document.querySelector('.temp').innerText = `Temperature: ${C}`;
-  });
+const fakeCities = ['London', 'Atlanta', 'Exeter']
+
+for (let index = 0; index < fakeCities.length; index++) {
+  const cityName = fakeCities[index];
+  // create a button for each city
+  var cityButton = document.createElement('button')
+  cityButton.textContent = cityName
+  buttonContainer.append(cityButton)
+}
+
+const forecast = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5']
+
+for (let index = 0; index < forecast.length; index++) {
+  const forecastData = forecast[index];
+  // create a card for each day
+  var card = document.createElement('div')
+  card.textContent = forecastData
+  buttonContainer.append(card)
+}
+
