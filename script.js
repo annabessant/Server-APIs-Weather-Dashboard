@@ -1,6 +1,6 @@
 var buttonContainer = document.getElementById('buttons-container');
 var searchArea = document.getElementById('search-area');
-var buttonContainer = document.getElementById('card');
+// var buttonContainer = document.getElementById('card');
 
 const fakeCities = ['London', 'Atlanta', 'Exeter']
 
@@ -19,6 +19,6 @@ for (let index = 0; index < forecast.length; index++) {
   // create a card for each day
   var card = document.createElement('div')
   card.textContent = forecastData
-  buttonContainer.append(card)
+  // buttonContainer.append(card)
 }
 
