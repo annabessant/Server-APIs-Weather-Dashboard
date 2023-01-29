@@ -16,28 +16,32 @@ nav {
 
 main {
     display: flex;
-    border: 1px solid red;
+    border: 1px solid white;
 }
 
 main div {
-    border: 1px solid red;
+    border: 1px solid white;
 }
 
 #search-area {
     width: 20%;
+    margin-top: 19px;
+    text-align: center;
 }
 
 #weather-area {
     width: 80%;
+    padding: 15px;
+    margin-top: 2px;
 }
 
 #weather-area div {
-    border: 1px solid blue;
+    border: 1px solid white;
 }
 
 form {
     margin-top: 30px;
-    border: 1px solid red;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     gap: 10px;
