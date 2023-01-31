@@ -39,7 +39,7 @@ function getGeoCoordinates (city){
        {
         console.log("data= ", jsonData);
         addCityToHistory(city);
-        getWeather(jsonData[0]);
+        getWeather(city,jsonData[0]);
       }
     })
     .catch(function (err) {
@@ -48,13 +48,30 @@ function getGeoCoordinates (city){
 }
 
 function addCityToHistory (city){
-  // to be comleted 
+  // to be completed 
 }
 
-function getWeather (data){
-  // to be comleted 
-}
+function getWeather (city, data){
+  // to be completed 
+  var { lat } = data;
+  var { lon } = data;
 
+  let  url=`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonData) {
+      console.log("data= ", jsonData);
+      displayWeather(city, jsonData);
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+}
+function displayweather(city, data) {
+  // to be completed 
+}
 
 //Search button 
 const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
