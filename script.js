@@ -21,7 +21,41 @@ function handleSearch(e){
   e.preventDefault();
   let city=inputEl.value.trim();
   console.log('city= ', city);
+  getGeoCoordinates(city);
+  inputEl.value="";
 }
+
+function getGeoCoordinates (city){
+  let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`;
+  //let url=`api.openweathermap.org/data/2.5/forecast?q={city}&appid={APIKey}`;
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonData) {
+      if (!jsonData[0]) {
+        alert('City could not be found!!');
+      } else
+       {
+        console.log("data= ", jsonData);
+        addCityToHistory(city);
+        getWeather(jsonData[0]);
+      }
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+}
+
+function addCityToHistory (city){
+  // to be comleted 
+}
+
+function getWeather (data){
+  // to be comleted 
+}
+
+
 //Search button 
 const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
 
