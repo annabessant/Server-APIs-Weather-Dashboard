@@ -1,13 +1,27 @@
 //Add API key
 // https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key} 
 // https://pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={API key}
-var APIKey = "4hvR8d7eaHdWg1tmEP8XtVYXwQTVRHiR";
+var APIKey = "f4c538c288b4efc0c9ebc7ecde479b1b";
+
+
+
+
 
 // connecting HTML via JS
 var buttonContainer = document.getElementById('buttons-container');
 var searchArea = document.getElementById('search-area');
+searchArea.addEventListener("submit", handleSearch);
 // var buttonContainer = document.getElementById('card');
-
+function handleSearch(e){
+  console.log ("handleSearch"); 
+  let inputEl=document.getElementById('search-input');
+  if (!inputEl.value){
+    return; 
+  }
+  e.preventDefault();
+  let city=inputEl.value.trim();
+  console.log('city= ', city);
+}
 //Search button 
 const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
 
@@ -32,6 +46,7 @@ for (let index = 0; index < forecast.length; index++) {
 }
 
 // Connect search button with Open weather
+// Add the search to the history
 // Display selected city in weather area
 // Add icons from https://openweathermap.org/weather-conditions 
 // Icons URL http://openweathermap.org/img/wn/10d@2x.png 
