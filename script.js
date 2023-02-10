@@ -75,16 +75,23 @@ function displayWeather(city, data) {
   let windEl=document.getElementById("wind");
   let humidityEl=document.getElementById("humidity");
   let cityNameEl=document.getElementById("city_name");
+  let iconEl = document.createElement('img');
 
   let temp=data.list[0].main.temp;
   let date=(data.list[0].dt_txt).split(" ")[0];
   let wind=data.list[0].wind.speed;
   let humidity=data.list[0].main.humidity;
+  let url = `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
+  let desc = data.list[0].weather[0].description || data.list[0].main;
 
   tempEl.textContent= `Temperature: ${temp} Deg F`;
   cityNameEl.textContent= `${city} (${date})`;
   windEl.textContent= `Wind: ${wind} MPH`;
   humidityEl.textContent= `Humidity: ${humidity} %`;
+  iconEl.setAttribute('src', url);
+  iconEl.setAttribute('alt', desc);
+  iconEl.setAttribute('class', 'weather-img');
+  cityNameEl.append(iconEl);
 }
 
 //Search button 
