@@ -55,8 +55,8 @@ function getWeather (city, data){
   // to be completed 
   var { lat } = data;
   var { lon } = data;
-
-  let  url=`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+  // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+  let  url=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`;
   fetch(url)
     .then(function (response) {
       return response.json();
@@ -69,8 +69,16 @@ function getWeather (city, data){
       console.error(err);
     });
 }
-function displayweather(city, data) {
+function displayWeather(city, data) {
   // to be completed 
+  let tempEl=document.getElementById("temp");
+  let windEl=document.getElementById("wind");
+  let humidityEl=document.getElementById("humidity");
+  let cityNameEl=document.getElementById("city_name");
+
+  let temp=data.list[0].main.temp;
+
+  tempEl.textContent= `Temperature: ${temp} Deg F`;
 }
 
 //Search button 
