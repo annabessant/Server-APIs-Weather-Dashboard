@@ -77,8 +77,10 @@ function displayWeather(city, data) {
   let cityNameEl=document.getElementById("city_name");
 
   let temp=data.list[0].main.temp;
+  let date=(data.list[0].dt_txt).split(" ")[0];
 
   tempEl.textContent= `Temperature: ${temp} Deg F`;
+  cityNameEl.textContent= `${city} (${date})`;
 }
 
 //Search button 
