@@ -56,7 +56,7 @@ function getWeather (city, data){
   var { lat } = data;
   var { lon } = data;
   // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-  let  url=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+  let  url=`https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${APIKey}`;
   fetch(url)
     .then(function (response) {
       return response.json();
