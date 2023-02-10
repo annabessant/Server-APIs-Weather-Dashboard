@@ -78,9 +78,11 @@ function displayWeather(city, data) {
 
   let temp=data.list[0].main.temp;
   let date=(data.list[0].dt_txt).split(" ")[0];
+  let wind=data.list[0].wind.speed;
 
   tempEl.textContent= `Temperature: ${temp} Deg F`;
   cityNameEl.textContent= `${city} (${date})`;
+  windEl.textContent= `Wind: ${wind} MPH`;
 }
 
 //Search button 
