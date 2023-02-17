@@ -64,11 +64,78 @@ function getWeather (city, data){
     .then(function (jsonData) {
       console.log("data= ", jsonData);
       displayWeather(city, jsonData);
+      displayFiveDayForecast(city, jsonData,)
     })
     .catch(function (err) {
       console.error(err);
     });
 }
+function displayFiveDayForecast (city, data) {
+  let tempEl=document.getElementById("temp1");
+  let dateEl=document.getElementById("date1");
+  let windEl=document.getElementById("wind1");
+  let humidityEl=document.getElementById("humidity1");
+  let iconEl = document.getElementById('image1');
+
+  let temp=data.list[7].main.temp;
+  let date=(data.list[7].dt_txt).split(" ")[0];
+  let wind=data.list[7].wind.speed;
+  let humidity=data.list[7].main.humidity;
+  let url = `https://openweathermap.org/img/w/${data.list[7].weather[0].icon}.png`;
+  let desc = data.list[7].weather[0].description || data.list[7].main;
+
+  tempEl.textContent= `Temperature: ${temp} Deg F`;
+  dateEl.textContent= `${date}`;
+  windEl.textContent= `Wind: ${wind} MPH`;
+  humidityEl.textContent= `Humidity: ${humidity} %`;
+  iconEl.setAttribute('src', url);
+  iconEl.setAttribute('alt', desc);
+  iconEl.setAttribute('class', 'weather-img');
+
+  let temp2El=document.getElementById("temp2");
+  let date2El=document.getElementById("date2");
+  let wind2El=document.getElementById("wind2");
+  let humidity2El=document.getElementById("humidity2");
+  let icon2El = document.getElementById('image2');
+
+  let temp2=data.list[15].main.temp;
+  let date2=(data.list[15].dt_txt).split(" ")[0];
+  let wind2=data.list[15].wind.speed;
+  let humidity2=data.list[15].main.humidity;
+  let url2 = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
+  let desc2 = data.list[15].weather[0].description || data.list[15].main;
+
+  temp2El.textContent= `Temperature: ${temp2} Deg F`;
+  date2El.textContent= `${date2}`;
+  wind2El.textContent= `Wind: ${wind2} MPH`;
+  humidity2El.textContent= `Humidity: ${humidity2} %`;
+  icon2El.setAttribute('src', url2);
+  icon2El.setAttribute('alt', desc2);
+  icon2El.setAttribute('class', 'weather-img');
+
+  let temp3El=document.getElementById("temp3");
+  let date3El=document.getElementById("date3");
+  let wind3El=document.getElementById("wind3");
+  let humidity3El=document.getElementById("humidity3");
+  let icon3El = document.getElementById('image3');
+
+  let temp3=data.list[22].main.temp;
+  let date3=(data.list[22].dt_txt).split(" ")[0];
+  let wind3=data.list[22].wind.speed;
+  let humidity3=data.list[22].main.humidity;
+  let url3 = `https://openweathermap.org/img/w/${data.list[22].weather[0].icon}.png`;
+  let desc3 = data.list[22].weather[0].description || data.list[22].main;
+
+  temp3El.textContent= `Temperature: ${temp3} Deg F`;
+  date3El.textContent= `${date3}`;
+  wind3El.textContent= `Wind: ${wind3} MPH`;
+  humidity3El.textContent= `Humidity: ${humidity3} %`;
+  icon3El.setAttribute('src', url3);
+  icon3El.setAttribute('alt', desc3);
+  icon3El.setAttribute('class', 'weather-img');
+  //cityNameEl.append(iconEl);
+}
+
 function displayWeather(city, data) {
   // to be completed 
   let tempEl=document.getElementById("temp");
@@ -122,3 +189,30 @@ for (let index = 0; index < forecast.length; index++) {
 // Display selected city in weather area
 // Add icons from https://openweathermap.org/weather-conditions 
 // Icons URL http://openweathermap.org/img/wn/10d@2x.png 
+
+function displayCards(city, data){  
+var cityName = $(".card");
+  cityName.text(args.name);
+  var date = $(".time");
+  date.text(currentDay);
+  var date1 = $(".card");
+  date1.text(moment().add(1,'days').format("ddd D MMM"));
+  var date2 = $(".date2");
+  date2.text(moment().add(2,'days').format("ddd D MMM"));
+  var date3 = $(".date3");
+  date3.text(moment().add(3,'days').format("ddd D MMM"));
+  var date4 = $(".date4");
+  date4.text(moment().add(4,'days').format("ddd D MMM"));
+  var date5 = $(".date5");
+  date5.text(moment().add(5, 'days').format("ddd D MMM"));
+  var todayTemp = $("#temp");
+  todayTemp.text(weatherObj.list[0].main.temp);
+  console.log(weatherObj.list[0].main.temp);
+  var todayWind = $("#wind");
+  todayWind.text(weatherObj.list[0].wind.speed);
+  var todayHumidity = $("#humidity");
+  todayHumidity.text(weatherObj.list[0].main.humidity);
+  var weatherIcon = $("#weather-icon");
+  weatherIcon.attr("src", "http://openweathermap.org/img/wn/" + weatherObj.list[0].weather[0].icon + "@4x.png");
+  $("#weather-wrapper").removeClass("hide");
+}
