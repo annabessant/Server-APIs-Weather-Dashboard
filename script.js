@@ -25,6 +25,8 @@ function handleSearch(e){
   inputEl.value="";
 }
 
+// call handleSearch instead of using inputEl value => button text
+
 function getGeoCoordinates (city){
   let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`;
   //let url=`api.openweathermap.org/data/2.5/forecast?q={city}&appid={APIKey}`;
@@ -224,37 +226,4 @@ for (let index = 0; index < forecast.length; index++) {
   var card = document.createElement('div')
   card.textContent = forecastData
   // buttonContainer.append(card)
-}
-
-// Connect search button with Open weather
-// Add the search to the history
-// Display selected city in weather area
-// Add icons from https://openweathermap.org/weather-conditions 
-// Icons URL http://openweathermap.org/img/wn/10d@2x.png 
-
-function displayCards(city, data){  
-var cityName = $(".card");
-  cityName.text(args.name);
-  var date = $(".time");
-  date.text(currentDay);
-  var date1 = $(".card");
-  date1.text(moment().add(1,'days').format("ddd D MMM"));
-  var date2 = $(".date2");
-  date2.text(moment().add(2,'days').format("ddd D MMM"));
-  var date3 = $(".date3");
-  date3.text(moment().add(3,'days').format("ddd D MMM"));
-  var date4 = $(".date4");
-  date4.text(moment().add(4,'days').format("ddd D MMM"));
-  var date5 = $(".date5");
-  date5.text(moment().add(5, 'days').format("ddd D MMM"));
-  var todayTemp = $("#temp");
-  todayTemp.text(weatherObj.list[0].main.temp);
-  console.log(weatherObj.list[0].main.temp);
-  var todayWind = $("#wind");
-  todayWind.text(weatherObj.list[0].wind.speed);
-  var todayHumidity = $("#humidity");
-  todayHumidity.text(weatherObj.list[0].main.humidity);
-  var weatherIcon = $("#weather-icon");
-  weatherIcon.attr("src", "http://openweathermap.org/img/wn/" + weatherObj.list[0].weather[0].icon + "@4x.png");
-  $("#weather-wrapper").removeClass("hide");
 }
