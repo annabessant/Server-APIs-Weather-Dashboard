@@ -155,6 +155,27 @@ function displayFiveDayForecast (city, data) {
   icon4El.setAttribute('src', url4);
   icon4El.setAttribute('alt', desc4);
   icon4El.setAttribute('class', 'weather-img');
+
+  let temp5El=document.getElementById("temp5");
+  let date5El=document.getElementById("date5");
+  let wind5El=document.getElementById("wind5");
+  let humidity5El=document.getElementById("humidity5");
+  let icon5El = document.getElementById('image5');
+
+  let temp5=data.list[39].main.temp;
+  let date5=(data.list[39].dt_txt).split(" ")[0];
+  let wind5=data.list[39].wind.speed;
+  let humidity5=data.list[38].main.humidity;
+  let url5 = `https://openweathermap.org/img/w/${data.list[39].weather[0].icon}.png`;
+  let desc5 = data.list[39].weather[0].description || data.list[39].main;
+
+  temp5El.textContent= `Temperature: ${temp3} Deg F`;
+  date5El.textContent= `${date5}`;
+  wind5El.textContent= `Wind: ${wind5} MPH`;
+  humidity5El.textContent= `Humidity: ${humidity5} %`;
+  icon5El.setAttribute('src', url5);
+  icon5El.setAttribute('alt', desc5);
+  icon5El.setAttribute('class', 'weather-img');
 }
 
 function displayWeather(city, data) {
