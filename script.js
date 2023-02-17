@@ -119,12 +119,12 @@ function displayFiveDayForecast (city, data) {
   let humidity3El=document.getElementById("humidity3");
   let icon3El = document.getElementById('image3');
 
-  let temp3=data.list[22].main.temp;
-  let date3=(data.list[22].dt_txt).split(" ")[0];
-  let wind3=data.list[22].wind.speed;
-  let humidity3=data.list[22].main.humidity;
-  let url3 = `https://openweathermap.org/img/w/${data.list[22].weather[0].icon}.png`;
-  let desc3 = data.list[22].weather[0].description || data.list[22].main;
+  let temp3=data.list[23].main.temp;
+  let date3=(data.list[23].dt_txt).split(" ")[0];
+  let wind3=data.list[23].wind.speed;
+  let humidity3=data.list[23].main.humidity;
+  let url3 = `https://openweathermap.org/img/w/${data.list[23].weather[0].icon}.png`;
+  let desc3 = data.list[23].weather[0].description || data.list[23].main;
 
   temp3El.textContent= `Temperature: ${temp3} Deg F`;
   date3El.textContent= `${date3}`;
@@ -134,6 +134,27 @@ function displayFiveDayForecast (city, data) {
   icon3El.setAttribute('alt', desc3);
   icon3El.setAttribute('class', 'weather-img');
   //cityNameEl.append(iconEl);
+
+  let temp4El=document.getElementById("temp4");
+  let date4El=document.getElementById("date4");
+  let wind4El=document.getElementById("wind4");
+  let humidity4El=document.getElementById("humidity4");
+  let icon4El = document.getElementById('image4');
+
+  let temp4=data.list[31].main.temp;
+  let date4=(data.list[31].dt_txt).split(" ")[0];
+  let wind4=data.list[31].wind.speed;
+  let humidity4=data.list[31].main.humidity;
+  let url4 = `https://openweathermap.org/img/w/${data.list[31].weather[0].icon}.png`;
+  let desc4 = data.list[31].weather[0].description || data.list[31].main;
+
+  temp4El.textContent= `Temperature: ${temp3} Deg F`;
+  date4El.textContent= `${date4}`;
+  wind4El.textContent= `Wind: ${wind4} MPH`;
+  humidity4El.textContent= `Humidity: ${humidity4} %`;
+  icon4El.setAttribute('src', url4);
+  icon4El.setAttribute('alt', desc4);
+  icon4El.setAttribute('class', 'weather-img');
 }
 
 function displayWeather(city, data) {
