@@ -1,17 +1,12 @@
 //Add API key
-// https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key} 
-// https://pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={API key}
 var APIKey = "f4c538c288b4efc0c9ebc7ecde479b1b";
-
-
-
-
 
 // connecting HTML via JS
 var buttonContainer = document.getElementById('buttons-container');
 var searchArea = document.getElementById('search-area');
 searchArea.addEventListener("submit", handleSearch);
-// var buttonContainer = document.getElementById('card');
+
+// enable search
 function handleSearch(e){
   console.log ("handleSearch"); 
   let inputEl=document.getElementById('search-input');
@@ -25,7 +20,7 @@ function handleSearch(e){
   inputEl.value="";
 }
 
-// call handleSearch instead of using inputEl value => button text
+// enable geo coordinates of cities
 
 function getGeoCoordinates (city){
   let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`;
@@ -53,8 +48,8 @@ function addCityToHistory (city){
   // to be completed 
 }
 
+// Get today's weather
 function getWeather (city, data){
-  // to be completed 
   var { lat } = data;
   var { lon } = data;
   // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
@@ -72,6 +67,9 @@ function getWeather (city, data){
       console.error(err);
     });
 }
+
+// display weather on cards for days 1-5
+
 function displayFiveDayForecast (city, data) {
   let tempEl=document.getElementById("temp1");
   let dateEl=document.getElementById("date1");
@@ -181,7 +179,7 @@ function displayFiveDayForecast (city, data) {
 }
 
 function displayWeather(city, data) {
-  // to be completed 
+  
   let tempEl=document.getElementById("temp");
   let windEl=document.getElementById("wind");
   let humidityEl=document.getElementById("humidity");
@@ -206,24 +204,24 @@ function displayWeather(city, data) {
 }
 
 //Search button 
-const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
+// const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
 
-for (let index = 0; index < fakeCities.length; index++) {
-  const cityName = fakeCities[index];
-  // create a button for each city
-  var cityButton = document.createElement('button')
-  cityButton.textContent = cityName
-  buttonContainer.append(cityButton)
-}
+// for (let index = 0; index < fakeCities.length; index++) {
+//   const cityName = fakeCities[index];
+//   // create a button for each city
+//   var cityButton = document.createElement('button')
+//   cityButton.textContent = cityName
+//   buttonContainer.append(cityButton)
+// }
 
 // Cards for 5-days
 
-const forecast = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5']
+// const forecast = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5']
 
-for (let index = 0; index < forecast.length; index++) {
-  const forecastData = forecast[index];
-  // create a card for each day
-  var card = document.createElement('div')
-  card.textContent = forecastData
-  // buttonContainer.append(card)
-}
+// for (let index = 0; index < forecast.length; index++) {
+//   const forecastData = forecast[index];
+//   create a card for each day
+//   var card = document.createElement('div')
+//   card.textContent = forecastData
+//   buttonContainer.append(card)
+// }
