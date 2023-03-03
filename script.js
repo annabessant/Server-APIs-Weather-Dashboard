@@ -240,6 +240,13 @@ function displayWeather(city, data) {
   cityNameEl.append(iconEl);
 }
 
+let fetchedHistory=localStorage.getItem("cities");
+if (fetchedHistory){
+  searchHistory = JSON.parse(fetchedHistory);
+}
+displaySearchHistory();
+
+
 //Search button 
 // const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
 
