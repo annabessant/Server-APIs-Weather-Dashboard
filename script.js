@@ -6,11 +6,23 @@ let searchHistory = [];
 
 //search history related
 let historyEl = document.getElementById('buttons-container');
+historyEl.addEventListener("click", handleHistoryClick);
+
 
 // connecting HTML via JS
 var buttonContainer = document.getElementById('buttons-container');
 var searchArea = document.getElementById('search-area');
 searchArea.addEventListener("submit", handleSearch);
+
+function handleHistoryClick(event){
+  if (!event.target.matches(".history-btn")){
+    return; 
+  }
+
+  let btn=event.target;
+  let city=btn.getAttribute("data-search");
+  getGeoCoordinates(city);
+}
 
 // enable search
 function handleSearch(e) {
