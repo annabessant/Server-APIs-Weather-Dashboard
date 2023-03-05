@@ -121,7 +121,7 @@ function displayFiveDayForecast(city, data) {
   let url = `https://openweathermap.org/img/w/${data.list[7].weather[0].icon}.png`;
   let desc = data.list[7].weather[0].description || data.list[7].main;
 
-  tempEl.textContent = `Temp: ${temp} Deg F`;
+  tempEl.textContent = `Temp: ${temp} ºF`;
   dateEl.textContent = `${date}`;
   windEl.textContent = `Wind: ${wind} MPH`;
   humidityEl.textContent = `Humidity: ${humidity} %`;
@@ -142,7 +142,7 @@ function displayFiveDayForecast(city, data) {
   let url2 = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
   let desc2 = data.list[15].weather[0].description || data.list[15].main;
 
-  temp2El.textContent = `Temp: ${temp2} Deg F`;
+  temp2El.textContent = `Temp: ${temp2} ºF`;
   date2El.textContent = `${date2}`;
   wind2El.textContent = `Wind: ${wind2} MPH`;
   humidity2El.textContent = `Humidity: ${humidity2} %`;
@@ -163,7 +163,7 @@ function displayFiveDayForecast(city, data) {
   let url3 = `https://openweathermap.org/img/w/${data.list[23].weather[0].icon}.png`;
   let desc3 = data.list[23].weather[0].description || data.list[23].main;
 
-  temp3El.textContent = `Temp: ${temp3} Deg F`;
+  temp3El.textContent = `Temp: ${temp3} ºF`;
   date3El.textContent = `${date3}`;
   wind3El.textContent = `Wind: ${wind3} MPH`;
   humidity3El.textContent = `Humidity: ${humidity3} %`;
@@ -185,7 +185,7 @@ function displayFiveDayForecast(city, data) {
   let url4 = `https://openweathermap.org/img/w/${data.list[31].weather[0].icon}.png`;
   let desc4 = data.list[31].weather[0].description || data.list[31].main;
 
-  temp4El.textContent = `Temp: ${temp3} Deg F`;
+  temp4El.textContent = `Temp: ${temp3} ºF`;
   date4El.textContent = `${date4}`;
   wind4El.textContent = `Wind: ${wind4} MPH`;
   humidity4El.textContent = `Humidity: ${humidity4} %`;
@@ -206,7 +206,7 @@ function displayFiveDayForecast(city, data) {
   let url5 = `https://openweathermap.org/img/w/${data.list[39].weather[0].icon}.png`;
   let desc5 = data.list[39].weather[0].description || data.list[39].main;
 
-  temp5El.textContent = `Temp: ${temp3} Deg F`;
+  temp5El.textContent = `Temp: ${temp3} ºF`;
   date5El.textContent = `${date5}`;
   wind5El.textContent = `Wind: ${wind5} MPH`;
   humidity5El.textContent = `Humidity: ${humidity5} %`;
@@ -230,7 +230,7 @@ function displayWeather(city, data) {
   let url = `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
   let desc = data.list[0].weather[0].description || data.list[0].main;
 
-  tempEl.textContent = `Temp: ${temp} Deg F`;
+  tempEl.textContent = `Temp: ${temp} ºF`;
   cityNameEl.textContent = `${city} (${date})`;
   windEl.textContent = `Wind: ${wind} MPH`;
   humidityEl.textContent = `Humidity: ${humidity} %`;
@@ -245,27 +245,3 @@ if (fetchedHistory){
   searchHistory = JSON.parse(fetchedHistory);
 }
 displaySearchHistory();
-
-
-//Search button 
-// const fakeCities = ['London', 'Atlanta', 'Exeter', 'Berlin']
-
-// for (let index = 0; index < fakeCities.length; index++) {
-//   const cityName = fakeCities[index];
-//   // create a button for each city
-//   var cityButton = document.createElement('button')
-//   cityButton.textContent = cityName
-//   buttonContainer.append(cityButton)
-// }
-
-// Cards for 5-days
-
-// const forecast = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5']
-
-// for (let index = 0; index < forecast.length; index++) {
-//   const forecastData = forecast[index];
-//   create a card for each day
-//   var card = document.createElement('div')
-//   card.textContent = forecastData
-//   buttonContainer.append(card)
-// }
