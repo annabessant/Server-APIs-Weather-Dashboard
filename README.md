@@ -14,7 +14,7 @@ Repo URL: https://github.com/annabessant/Server-APIs-Weather-Dashboard/tree/main
 Website URL: https://annabessant.github.io/Server-APIs-Weather-Dashboard/ 
 
 ## Screenshot
-! [alt text: screetshot of the starting page of weather dashboard](.//assets/Screenshot_Weather_Dashboard.png)
+! [alt text: screetshot of the starting page of weather dashboard](.//assets/Screenshot_Weather_Dashboard.png "Screenshot of the deployment")
 
 ## Contact
 For further details and follow-up: anna@thefutureofinnovation.org 
