@@ -41,7 +41,7 @@ function handleSearch(e) {
 // enable geo coordinates of cities
 
 function getGeoCoordinates(city) {
-  let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`;
+  let url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`;
   //let url=`api.openweathermap.org/data/2.5/forecast?q={city}&appid={APIKey}`;
   fetch(url)
     .then(function (response) {
